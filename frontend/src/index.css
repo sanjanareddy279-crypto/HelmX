@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ink-50 text-ink-700 font-sans;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(59, 130, 246, 0.04) 0%, transparent 45%),
+      radial-gradient(circle at 85% 100%, rgba(168, 85, 247, 0.03) 0%, transparent 45%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-primary-500/20 text-primary-700;
+  }
+}
+
+@layer utilities {
+  .glass-light {
+    @apply bg-white/70 backdrop-blur-xl border border-ink-200/60;
+  }
+  .card-base {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { @apply bg-transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { @apply bg-ink-200 rounded-full; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { @apply bg-ink-300; }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600;
+  }
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary-500 to-primary-700;
+  }
+  .gradient-success {
+    @apply bg-gradient-to-br from-success-400 to-success-600;
+  }
+  .gradient-error {
+    @apply bg-gradient-to-br from-error-400 to-error-600;
+  }
+  .gradient-purple {
+    @apply bg-gradient-to-br from-purple-400 to-purple-600;
+  }
+}
